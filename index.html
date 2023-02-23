@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="NINormal">
+    <meta name="author" content="Kejie Li, Jia-Wang Bian, Robert Castle, Philip H.S. Torr, Victor Adrian Prisacariu">
+    <meta name="generator" content="Jekyll v4.1.1">
+    
+    <title>OxBrick</title>
+
+    <!-- Bootstrap core CSS -->
+    <link
+      rel="stylesheet" 
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" 
+      crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+</nav>
+
+<main role="main" class="container">
+
+  <div class="title">
+    <h1>OxBrick: A Dataset for High-fidelity Object Reconstruction with Mobile Devices</h1>
+  </div>
+
+  <div class="col text-center">
+    <p class="authors">
+      <a href="https://likojack.github.io/kejieli/#/home">Kejie Li</a><sup>1</sup>
+      <a href="https://jwbian.net/">Jia-Wang Bian</a></a><sup>1</sup>,
+      <a href="https://scholar.google.co.uk/citations?user=ChYEbcsAAAAJ&hl=en">Robert Castle</a></a><sup>2</sup>,
+      <a href="https://torrvision.com/">Philip H.S. Torr</a></a><sup>1</sup>,
+      <a href="https://www.robots.ox.ac.uk/~victor/">Victor Adrian Prisacariu</a></a><sup>1</sup><br>
+      <sup>1</sup> University of Oxford    <sup>2</sup> Apple
+    </p>
+  </div>
+
+  <div class="col text-center">
+    <a class="btn btn-secondary" href="" role="button">Arxiv</a>
+    <a class="btn btn-secondary" href="" role="button">Data</a>
+    <a class="btn btn-secondary" href="https://github.com/ActiveVisionLab/oxbrick" role="button">Code</a>
+  </div>
+  
+  
+  <h2 class="grey-heading_nerf">Abstract</h2>
+  Generate high-quality 3D ground-truth shapes for reconstruction evaluation is extremely challenging because even 
+  3D scanners can only generate pseudo ground-truth shapes with artefacts. 
+  We propose a novel data capturing and 3D annotation pipeline to obtain precise 
+  3D ground-truth shapes without relying on expensive 3D scanners. 
+  The key to creating the precise 3D ground-truth shapes is using LEGO models, 
+  which are made of LEGO bricks with known geometry.
+  The OxBrick dataset provides a unique opportunity for future research on high-quality 3D
+  reconstruction thanks to two distinctive features: 1) A large number of RGBD sequences
+  with <b>precise 3D ground-truth annotations</b>. 2) The RGBD images were captured using
+   <b>mobile devices</b> so algorithms can be tested in a realistic setup for mobile AR 
+   applications. 
+
+  <img src="assets/teaser.gif" style="width:95%; margin-right:0px; margin-top:20px;">
+  <p>
+  </p>
+
+  <h2 class="grey-heading_nerf">3D Object Alignment</h2>
+  <p>
+    We showcase the quality of GT shape alignment to the image sequence by projecting the 3D model to the RGB images (shown as "3D Model Projection").
+    "GT depth" is the depth maps rendered from 3D model at the same viewpoint. 
+    "RGB Image" and "ARKit Depth" are the high-res RGB images and low-res depth maps provided by ARKit.  
+  </p>
+  
+  <video class='center_video' controls autoplay muted loop>
+    <source src="assets/align_11.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+
+  <video class='center_video' controls autoplay muted loop>
+    <source src="assets/align_01.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+
+  <video class='center_video' controls autoplay muted loop>
+    <source src="assets/align_00.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+  </video>
+
+  <h2 class="grey-heading_nerf">BibTeX</h2>
+  <pre>
+    @article{
+    }
+  </pre>
+
+</main>
+</html>
