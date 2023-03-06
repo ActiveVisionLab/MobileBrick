@@ -34,10 +34,8 @@ The data modality of RGBD images captured on a mobile device paired with exact 3
 1. [Install](#install)
 1. [Our dataset](#dataset-organisation)
 1. [Evaluation](#evaluation)
-1. [Cite](#scroll-cite)
-1. [License](#️page_with_curl-license)
-1. [Changelog](#pencil-changelog)
-1. [Acknowledgements](#octocat-acknowledgements)
+1. [Cite](#cite)
+1. [Changelog](#changelog)
 
 
 # Install
