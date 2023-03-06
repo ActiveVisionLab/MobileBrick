@@ -18,9 +18,9 @@
 
 
 <br>Even 3D scanners can only generate pseudo ground-truth shapes with artefacts.
-OxBrick is the first **multi-view RGBD** dataset, captured on a **mobile device**, with **precise** 3D annotations for detailed 3D object reconstruction.
+MobileBrick is the first **multi-view RGBD** dataset, captured on a **mobile device**, with **precise** 3D annotations for detailed 3D object reconstruction.
 
-We propose a novel data capturing and 3D annotation pipeline in OxBrick without relying on expensive 3D scanners. 
+We propose a novel data capturing and 3D annotation pipeline in MobileBrick without relying on expensive 3D scanners. 
 The key to creating the precise 3D ground-truth shapes is using LEGO models, which are made of LEGO bricks with known geometry. 
 The data modality of RGBD images captured on a mobile device paired with exact 3D geometry annotations provides a unique opportunity for future research on high-fidelity 3D reconstruction.
 
