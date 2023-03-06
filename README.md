@@ -5,7 +5,7 @@
     ·
     <a href="https://jwbian.net/">Jia-Wang Bian</a>
     ·
-    <a href="https://scholar.google.co.uk/citations?user=ChYEbcsAAAAJ&hl=en">Robert Castle</a>
+    <a href="https://robertcastle.com/">Robert Castle</a>
     ·
      <a href="https://torrvision.com/">Philip H.S. Torr</a>
     ·
