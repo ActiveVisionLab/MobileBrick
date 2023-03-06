@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">OxBrick A Dataset for High-fidelity<br>Object Reconstruction with Mobile Devices</h1>
+  <h1 align="center">Building LEGO for 3D Reconstruction on Mobile Devices</h1>
   <p align="center">
     <a href="https://likojack.github.io/kejieli/#/home">Kejie Li</a>
     ·
@@ -12,11 +12,10 @@
      <a href="https://www.robots.ox.ac.uk/~victor/">Victor Adrian Prisacariu</a>   
   </p>
 
-  <h3 align="center"><a href="">Project Page</a> | <a href="">arXiv</a> | <a href="">Dataset</a> </h3> 
+  <h3 align="center"><a href="https://code.active.vision/MobileBrick/">Project Page</a> | <a href="https://arxiv.org/abs/2303.01932">arXiv</a> | <a href="http://www.robots.ox.ac.uk/~victor/data/MobileBrick/MobileBrick_Mar23.zip">Dataset</a> </h3> 
   <div align="center"></div>
 </p>
 
-**How to generate high-quality 3D ground-truth shapes for reconstruction evaluation?**
 
 <br>Even 3D scanners can only generate pseudo ground-truth shapes with artefacts.
 OxBrick is the first **multi-view RGBD** dataset, captured on a **mobile device**, with **precise** 3D annotations for detailed 3D object reconstruction.
@@ -45,11 +44,11 @@ The data modality of RGBD images captured on a mobile device paired with exact 3
 you can install dependencies with Anaconda as follows: 
 ```shell
 conda env create -f environment.yml
-conda activate oxbrick
+conda activate mobilebrick
 ```
 
 # Dataset Organisation
-The dataset is organised by sequences, with xxx sequences of random shapes can be used for training, and xxx sequences of curated LEGO models for evaluation.
+The dataset is organised by sequences, with 135 sequences of random shapes can be used for training, and 18 sequences of manually curated LEGO models for evaluation.
 
 A sequence contains the following structure:
 ```
@@ -58,11 +57,9 @@ SEQUENCE_NAME
 ├── arkit_depth (the confidence and depth maps provided by ARKit)
 |    ├── 000000_conf.png
 |    ├── 000000.png
-|    ├── 000000.npy
 |    ├── ...
 ├── gt_depth (The high-resolution depth maps projected from the aligned GT shape)
 |    ├── 000000.png
-|    ├── 000000.npy
 |    ├── ...     
 ├── image (the RGB images)
 |    ├── 000000.jpg
@@ -77,37 +74,40 @@ SEQUENCE_NAME
 |    ├── 000000.txt
 |    ├── ...
 ├── mesh
-|    ├── high_res_tsdf_fusion.ply
-|    ├── colmap_mesh.ply
-|    ├── gt_points.ply
+|    ├── gt_mesh.ply
 ├── visibility_mask.npy (the visibility mask to be used for evaluation)
+├── cameras.npz (processed camera poses using the format of NeuS)
 ```
 
 Note:
-- the gt_points mesh is used for evaluation
-- the high_res_tsdf_fusion is created by running tsdf-fusion using the gt depth
+- the gt_mesh.ply is created by running tsdf-fusion using the gt depth
 
 # Evaluation 
-first preprocess the reconstruction by running preprocess_3d.py. This will crop the mesh to only visible parts using the visibility_mask.npy provided.
-Then run evaluate_3d.py to get results.
+We provide scripts to run evaluation on 3D reconstruction and Novel View Synthesis (NVS).
 
-```shell
-python preprocess_3d.py
+To evaluate 3D reconstruction, use the following code.
 ```
-and evaluate it using
-```shell
-python evaluate_3d.py
+python evaluations/evaluate_3d.py --method $METHOD
 ```
-A csv file with per-sequence results will be generated.
+The reconstruction files (.ply) to be evaluated should be places in the ```./meshes/$METHOD``` folder. A .csv file with per-sequence results will be generated.
+
+To evaluate NVS, use the following code.
+```shell
+python evaluate_nvs.py --method $METHOD
+```
+The rendered images for evaluation should be placed in ```./nvs/$METHOD```
 
 
 # Cite
 Please cite our work if you find it useful or use any of our code
 ```latex
+@article{li2023mobilebrick,
+  author = {Kejie Li, Jia-Wang Bian, Robert Castle, Philip H.S. Torr, Victor Adrian Prisacariu},
+  title = {MobileBrick: Building LEGO for 3D Reconstruction on Mobile Devices},
+  journal={arXiv preprint arXiv:2303.01932},
+  year={2023}
+}
 ```
 
-# ️License
-Copyright © Niantic, Inc. 2022. Patent Pending. All rights reserved. This code is for non-commercial use. Please see the [license file](LICENSE) for terms.
-
 # Changelog
-- xx/03/2023: Dataset is online
+- 06/03/2023: Dataset is online
