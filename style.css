@@ -72,5 +72,8 @@ h1{
   background-color: rgb(0, 255, 106);
 }
 .second {
-  background-color: yellow;
+  background-color: rgb(211, 197, 0);
+}
+.my-table caption {
+  text-align: center;
 }
