@@ -53,3 +53,24 @@ h1{
   font-weight: 300;
   text-align: justify;
 }
+.my-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.my-table th, .my-table td {
+  border: 1px solid rgba(39, 37, 37, 0.171);
+  padding: 8px;
+  text-align: center;
+}
+
+.my-table th {
+  background-color: #b1b1b1;
+}
+
+.first {
+  background-color: rgb(0, 255, 106);
+}
+.second {
+  background-color: yellow;
+}
