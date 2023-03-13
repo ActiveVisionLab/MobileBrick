@@ -108,4 +108,5 @@ Please cite our work if you find it useful or use any of our code
 ```
 
 # Changelog
+- 09/03/2023: MobileBrick is merged into [Voxurf](https://github.com/wutong16/Voxurf), see instructions on their repo.
 - 06/03/2023: Dataset is online
